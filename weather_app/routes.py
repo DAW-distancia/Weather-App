@@ -74,5 +74,5 @@ def delete_city(name):
     db.session.delete(city)
     db.session.commit()
 
-    flash(f'Successfully deleted { city.name }', 'success')
+    flash(f'Successfully deleted { city.name.capitalize() }', 'success')
     return redirect(url_for('index_get'))
