@@ -2,7 +2,7 @@
 
 :partly_sunny::cloud_with_rain::cloud_with_lightning:
 
-A simple Weather Checking Application built with Flask made to track current weather in any city of the world. Uses [OpenWeatherMap API](https://openweathermap.org/). 
+A simple Weather Checking Application built in Flask made to track current weather in any city of the world. Uses [OpenWeatherMap API](https://openweathermap.org/). 
 
 Scroll down to see the **Instructions** on how to launch this project properly. 
 
