@@ -1,16 +1,8 @@
 from flask import flash, redirect, render_template, request, url_for
 
-import requests
-
 from weather_app import app, db
 from weather_app.models import City
-
-
-def get_weather_data(city):
-    url = f'http://api.openweathermap.org/data/2.5/weather?q={ city }\
-            &units=metric&appid=271d1234d3f497eed5b1d80a07b3fcd1'
-    data_json = requests.get(url).json()
-    return data_json
+from weather_app.utils import get_weather_data
 
 
 @app.route('/', methods=['POST'])
@@ -20,11 +12,11 @@ def index_post():
 
     err_msg = None
 
-    # Check if theres anything in the form
+    # Check if form contains anything
     if new_city:
         # Check if city already exists in database
         if not City.query.filter_by(name=new_city).first():
-            # Check if city entered correctly
+            # Check if city name entered correctly
             if get_weather_data(new_city)['cod'] == 200:
                 db.session.add(City(name=new_city))
                 db.session.commit()
