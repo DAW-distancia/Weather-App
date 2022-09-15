@@ -7,7 +7,7 @@ from weather_app.utils import get_weather_data
 
 @app.route('/', methods=['POST'])
 def index_post():
-    # Lower form input to avoid duplicates in db
+    # Lower form input to avoid duplicates in database
     new_city = (request.form.get('city')).lower()
 
     err_msg = None
