@@ -12,9 +12,25 @@ Scroll down to see the **Instructions** on how to launch this project properly.
 
 ## Instructions
 
-1. Clone this repository
-2. Start a new Virtualenv, activate it, type in console `pip install -r requirements.txt`
-3. Run the Flask server by using `python run.py`
+1. Clone this repository, cd into it
+
+```
+git clone https://github.com/hatredholder/Flask-Weather-App.git
+cd Flask-Weather-App
+```    
+
+2. Start a new **Virtualenv**, activate it, install Python module requirements
+
+```
+virtualenv myenv
+source myenv/bin/activate
+pip install -r requirements.txt
+```  
+3. Run the **Flask** server
+
+```
+python run.py
+```  
 
 ## Technologies
 
