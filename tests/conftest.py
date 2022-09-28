@@ -5,6 +5,9 @@ from weather_app import app, db
 
 @pytest.fixture(scope="module")
 def application():
+    """
+    Setup the Flask's app for testing
+    """
 
     # Setup
     app.config.update({
@@ -25,4 +28,7 @@ def application():
 
 @pytest.fixture()
 def client(application):
+    """
+    Returns Flask's test client to send requests with
+    """
     return application.test_client()
