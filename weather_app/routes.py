@@ -25,6 +25,7 @@ def index_post():
         else:
             err_msg = 'This city is already added'
 
+    # Send the message
     if err_msg:
         flash(err_msg, 'error')
     else:
