@@ -12,6 +12,20 @@ def test_index_route_GET(client):
     assert b"How\'s the weather today?" in response.data
 
 
+def test_index_route_with_empty_city_POST(client):
+    """
+    Go to the blank url,
+    send a post request with blank data,
+    check the status code
+    """
+    city_data = {"city": ""}
+    response = client.post("/", data=city_data)
+    assert response.status_code == 302
+
+    # Check if city got added to the db
+    assert len(City.query.all()) == 0
+
+
 def test_index_route_with_actual_city_POST(client):
     """
     Go to the blank url,
@@ -27,6 +41,20 @@ def test_index_route_with_actual_city_POST(client):
 
     # Check if added city is lowercase
     assert str(City.query.all()[0]) == "manhattan"
+
+
+def test_index_route_with_duplicate_city_POST(client):
+    """
+    Go to the blank url,
+    send a post request with duplicate data,
+    check the status code
+    """
+    city_data = {"city": "Manhattan"}
+    response = client.post("/", data=city_data)
+    assert response.status_code == 302
+
+    # Check if city got added to the db
+    assert len(City.query.all()) == 1
 
 
 def test_index_route_with_fake_city_POST(client):
