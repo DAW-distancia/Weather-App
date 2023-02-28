@@ -39,3 +39,27 @@ Frontend: Basic HTML, Bulma.
 Backend: Flask.
 
 Database: SQLite.
+
+## Objetivo:
+Poner en marcha una web escrita en python (flask) de tres formas diferentes: 
+* con apache2 + wsgi
+* con apache2 + gunicorn/uwsgi 
+* con nginx + gunicorn/uwsgi.
+
+## Instrucciones para clase:
+
+### Instalación con apache2 + wsgi
+
+Sigue las instrucciones del ejercicio anterior
+
+### Instalación con apache2 + gunicorn/uwsgi
+
+Sigue las instrucciones de https://fp.josedomingo.org/iaw2122/u03/gunicorn.html
+
+### Instalación con nginx + gunicorn/uswgi
+
+Sigue las instrucciones de https://fp.josedomingo.org/iaw2122/u03/gunicorn.html
+
+## Capturas
+Añade capturas de pantalla de las tres configuraciones. Muestra el contenido de las cabederas. Puedes usar el comando `curl -I http://localhost:puerto` o las developer tools del navegador como aquí: 
+![Captura-de-pantalla](img/cabeceras.png)
