@@ -36,7 +36,12 @@ def index_post():
 
 @app.route('/', methods=['GET'])
 def index_get():
-    cities = City.query.all()
+    try:
+        cities = City.query.all()   
+    except:
+        # Create database if it doesn't exist
+        db.create_all()
+        cities = []
 
     weather_data = []
 
