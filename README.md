@@ -1,5 +1,10 @@
 # Weather-App
 
+## Modificaciones para desplegar con Apache2 + WSGI
+* Uso de mysql en lugar de sqlite
+* Instalación del cliente para python
+* Creación de la base de datos si no existe (en fichero `routes.py`)
+
 :partly_sunny::cloud_with_rain::cloud_with_lightning:
 
 A simple Weather Checking Application built in Flask made to track current weather in any city of the world. Uses [OpenWeatherMap API](https://openweathermap.org/). 
